@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+  crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(
+    
+      function(){
+      $('.code div').hide();
+        $('div.code').click(
+           function(){
+               $(this).children().show();
+               $(this).siblings().children().hide();
+           }
+       );
+        });
+        
+    </script>
+    <style>
+        .code{
+            border-style: solid;
+            border-width: 1px;     
+        }
+        div{
+            margin-top:15px;
+        }
+    </style>
+    </head>
+    <body>
+  
+        <div id="analgesic">
+            마취종류 <- 외과_수술기록_위암 <br>
+            <div class="code">
+                general anesthesia
+                <div>
+                    50697003 |General anesthesia (procedure)|
+                </div>
+            </div>
+            
+        </div>
+        
+            <div id="pastperitonealsurgery">
+                과거복부수술 <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견<br>
+                
+                <div class="code">
+                    유
+                    <div>
+                        161615003 |History of surgery (situation)|: 363589002 |Associated procedure (attribute)|=(387713003 |Surgical procedure (procedure)|: 363704007 |Procedure site (attribute)|= 818983003 |Structure of abdominopelvic cavity and/or content of abdominopelvic cavity and/or anterior abdominal wall (body structure)|)<br>
+
+                    </div>
+                </div>
+                <div class="code">
+                    무
+                    <div>
+                        161615003 |History of surgery (situation)|: 363589002 |Associated procedure (attribute)|=(387713003 |Surgical procedure (procedure)|: 363704007 |Procedure site (attribute)|= 818983003 |Structure of abdominopelvic cavity and/or content of abdominopelvic cavity and/or anterior abdominal wall (body structure)|)
+                    </div>
+            </div>
+            <div id="pastperitonealsurgery2">
+                과거복부수술 (개복 또는 복강경) <- *환자정보 (필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    유
+                    <div>
+                        161615003 |History of surgery (situation)|: 363589002 |Associated procedure (attribute)|=(387713003 |Surgical procedure (procedure)|: 363704007 |Procedure site (attribute)|= 818983003 |Structure of abdominopelvic cavity and/or content of abdominopelvic cavity and/or anterior abdominal wall (body structure)|)
+                    </div>
+                </div>
+                <div class="code">
+                    무
+                    <div>
+                        416128008 |No history of procedure (situation)|: 363589002 |Associated procedure (attribute)|=(387713003 |Surgical procedure (procedure)|: 363704007 |Procedure site (attribute)|= 818983003 |Structure of abdominopelvic cavity and/or content of abdominopelvic cavity and/or anterior abdominal wall (body structure)|)
+                     </div>
+                </div>
+            </div>
+            <div id="pastliverhx">
+                간 <- 과거수술부위 <- *환자정보 (필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    간
+                    <div>
+                        161615003 |History of surgery (situation)|: 363589002 |Associated procedure (attribute)|=(387713003 |Surgical procedure (procedure)|: 363704007 |Procedure site (attribute)|= 10200004 |Liver structure (body structure)|)
+                    </div>
+                </div>
+            </div>
+            <div>
+                대장(직장,결장) <- 과거수술부위 <- *환자정보 (필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    대장
+                    <div>
+                        161615003 |History of surgery (situation)|: 363589002 |Associated procedure (attribute)|=(387713003 |Surgical procedure (procedure)|: 363704007 |Procedure site (attribute)|=14742008 |Structure of large intestine (body structure)|)
+                    </div>
+                </div>
+            </div>
+            <div>
+                위 <- 과거수술부위 <- *환자정보 (필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    위
+                    <div>
+                        161615003 |History of surgery (situation)|: 363589002 |Associated procedure (attribute)|=(387713003 |Surgical procedure (procedure)|: 363704007 |Procedure site (attribute)|= 10200004 |Liver structure (body structure)|)
+                    </div>
+                </div>
+            </div>
+
+        
+        
+        <div id="emergencyoperation">
+            <div id="emerop">
+                응급수술 <- *환자정보 (필수기록) <- 수술방법 및 소견<br> 
+                <div class="code">
+                    유
+                    <div>
+                        73994005 |Emergency operation (procedure)|<br>
+                        418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|= 73994005 |Emergency operation (procedure)|  
+                    </div>
+                </div>
+                <div class="code">
+                    무
+                    <div>
+                        73994005 |Emergency operation (procedure)|<br>
+                        418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|= 73994005 |Emergency operation (procedure)|  
+                    </div>
+                </div>
+            </div>
+            <div>
+                응급수술 <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견<br>
+                <div id="emerop21" class="code">
+                    유
+                    <div>
+                        73994005 |Emergency operation (procedure)|<br>
+                        418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|= 73994005 |Emergency operation (procedure)|  
+                    </div>
+                </div>
+                <div id="emerop22" class="code">
+                    무
+                    <div>
+                        73994005 |Emergency operation (procedure)|<br>
+                        418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|= 73994005 |Emergency operation (procedure)|  
+                    </div>
+                </div>
+            </div>             
+            <div>
+                응급 수술 사유 <- *환자정보 (필수기록) <- 수술방법 및 소견<br>
+                <div class="code">
+                    장폐색
+                    <div>
+                        73994005 |Emergency operation (procedure)|:405816004 |Procedure morphology (attribute)|=26036001 |Obstruction (morphologic abnormality)|,405813007 |Procedure site - Direct (attribute)|=Intestinal structure (body structure)
+                    </div>
+                </div>
+                <div class="code">
+                    출혈
+                    <div>
+                        73994005 |Emergency operation (procedure)|:405816004 |Procedure morphology (attribute)|=50960005 |Hemorrhage (morphologic abnormality)|
+                    </div>
+                </div>
+                <div class="code">
+                    천공
+                    <div>
+                        73994005 |Emergency operation (procedure)|:405816004 |Procedure morphology (attribute)|=36191001 |Perforation (morphologic abnormality)|
+                    </div>
+                </div>
+                <div class="code">
+                    기타
+                    <div>
+                        73994005 |Emergency operation (procedure)|
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                응급 수술 사유 <- 유 <- 응급수술 <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    사유에 대한 코드 제공
+                    <div>
+                    73994005 |Emergency operation (procedure)|:363702006 |Has focus (attribute)|= 질병명
+                    </div>
+                </div>
+            </div>
+            <div>
+                기타 <- 응급 수술 사유 <- *환자정보 (필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    장유착
+                    <div>
+                        73994005 |Emergency operation (procedure)|:405816004 |Procedure morphology (attribute)|=42685002 |Adhesion (morphologic abnormality)|,405813007 |Procedure site - Direct (attribute)|=Intestinal structure (body structure)
+                    </div>
+                </div>
+                <div class="code">
+                    장유착
+                    <div>
+                        73994005 |Emergency operation (procedure)|:405816004 |Procedure morphology (attribute)|=42685002 |Adhesion (morphologic abnormality)|,405813007 |Procedure site - Direct (attribute)|=Intestinal structure (body structure)
+                    </div>
+                </div>
+                <div class="code">
+                    anastomosis site stricture 
+                    <div>
+                        73994005 |Emergency operation (procedure)|:363702006 |Has focus (attribute)|=(370109009 |Surgical margin involved by tumor (finding)|:363698007 |Finding site (attribute)|=1370001000004102 |Proximal surgical margin (morphologic abnormality)|)
+                    </div>
+                </div>
+                <div class="code">
+                    frozen biopsy 상 prm+
+                    <div>
+                        73994005 |Emergency operation (procedure)|:405816004 |Procedure morphology (attribute)|=27551008 |Stricture (morphologic abnormality)|,405813007 |Procedure site - Direct (attribute)|=41796003 |Anastomosis (morphologic abnormality)|
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="prestage">
+            <div>
+                M <- 선행요법 전 임상적 진단 병기 <- *환자정보 (필수기록) <- 수술방법 및 소견M<br>
+                암이 심한 환자에게 수술전 선행요법을 실시하는데 이 선행요법을 하기 전 병기 
+                <div class="code">
+                    M0
+                    <div>
+                        30893008 |M0 category (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M1
+                    <div>
+                        55440008 |M1 category (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M1a
+                    <div>
+                        261927002 |Metastasis stage M1a (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M1b
+                    <div>
+                        261928007 |Metastasis stage M1b (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M1c
+                    <div>
+                        261929004 |Metastasis stage M1c (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M2
+                    <div>
+                        258297005 |Metastasis stage M2 (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M3
+                    <div>
+                        258298000 |Metastasis stage M3 (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                  M4
+                    <div>
+                        M4258298000 |Metastasis stage M4 (finding)|
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                N <- 선행요법 전 임상적 진단 병기 <- *환자정보 (필수기록) <- 수술방법 및 소견<br>
+                암이 심한 환자에게 수술전 선행요법을 실시하는데 이 선행요법을 하기 전 병기 
+                <div class="code">
+                    NX
+                    <div>
+                        79420006 |NX category (finding)|
+                    </div>
+                    
+                </div>
+                <div class="code">
+                    N0
+                    <div>
+                        62455006 |N0 category (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    N1
+                    <div>
+                        53623008 |N1 category (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    N2
+                    <div>
+                        46059003 |N2 category (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    N3
+                    <div>
+                        5856006 |N3 category (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    N4
+                    <div>
+                        22079002 |N4 category (finding)|
+                    </div>
+                </div>
+        </div>
+        <div>
+            T <- 선행요법 전 임상적 진단 병기 <- *환자정보 (필수기록) <- 수술방법 및 소견<br>
+            암이 심한 환자에게 수술전 선행요법을 실시하는데 이 선행요법을 하기 전 병기 
+            <div class="code">
+                TX
+                <div>
+                    67101007 |TX category (finding)|
+                </div>
+            </div>
+            <div class="code">
+                T0
+                <div>
+                    58790005 |T0 category (finding)|
+                </div>
+            </div>
+            <div class="code">
+                T1
+                <div>
+                    23351008 |T1 category (finding)|
+                </div>
+            </div>
+            <div class="code">
+                T2
+                <div>
+                    67673008 |T2 category (finding)|
+                </div>
+            </div>
+            <div class="code">
+                T3
+                <div>
+                    14410001 |T3 category (finding)|
+                </div>
+            </div>
+            <div class="code">
+                T4
+                <div>
+                    65565005 |T4 category (finding)|
+                </div>
+            </div>
+            <div>
+                Stage <- 선행요법 전 임상적 진단 병기 <- *환자정보 (필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    clinical stage 0
+                    <div>
+                        718465002 |Clinical stage 0 (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    clinical stage 1
+                    <div>
+                        13104003 |Clinical stage I (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    clinical stage 2
+                    <div>
+                        60333009 |Clinical stage II (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    clinical stage 3
+                    <div>
+                        50283003 |Clinical stage III (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    clinical stage 4
+                    <div>
+                        2640006 |Clinical stage IV (finding)|
+                    </div>
+                </div>
+            </div>
+           
+
+        <div id="preoperativetreatment">
+            <div>
+                Pre op chemo <- *환자정보 (필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    유
+                    <div>
+                        394894008 |Pre-operative chemotherapy (procedure)|
+                    </div>
+                </div>
+                <div class="code">
+                    무
+                    <div>
+                        418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|=394894008 |Pre-operative chemotherapy (procedure)|
+                    </div>
+                </div>
+            </div>
+            <div>
+                Pre op chemo <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    유
+                    <div>
+                        394894008 |Pre-operative chemotherapy (procedure)|
+                    </div>
+                </div>
+                <div class="code">
+                    무
+                    <div>
+                        418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|=394894008 |Pre-operative chemotherapy (procedure)|
+                    </div>
+                </div>
+            </div>
+            <div>
+                Pre op RT <- *환자정보 (필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    유
+                    <div>
+                        168523002 |Preoperative course of radiotherapy (procedure)|
+                    </div>
+                </div>
+                <div class="code">
+                    무
+                    <div>
+                        418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|= 168523002 |Preoperative course of radiotherapy (procedure)|
+                    </div>
+                </div>
+            </div>
+            <div>
+                Pre op RT <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    유
+                    <div>
+                        168523002 |Preoperative course of radiotherapy (procedure)|
+                    </div>
+                </div>
+                <div class="code">
+                    무
+                    <div>
+                        418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|= 168523002 |Preoperative course of radiotherapy (procedure)|
+                    </div>
+                </div>
+            </div>       
+        </div>
+        <div>
+            <div>
+                Position <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    supine
+                    <div>
+                        40199007 |Supine body position (finding)|
+                    </div>
+                </div>
+            </div>
+            <div>
+                supine <- Position <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    supine
+                    <div>
+                        40199007 |Supine body position (finding)|
+                    </div>
+                </div>
+            </div>
+            <div>
+                기타 <- Position <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    기타
+                    <div>
+                        9851009 |Body position finding (finding)|
+                    </div>
+                </div>
+            </div>
+            <div>
+                Approach <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                <div class="code">
+                    laparoscopy
+                    <div>
+                        387713003 |Surgical procedure (procedure)|:260507000 |Access (attribute)|=103388001 |Percutaneous approach - access (qualifier value)|,424226004 |Using device (attribute)|=86174004 |Laparoscope, device (physical object)|
+                    </div>
+                </div>
+                <div class="code">
+                    robot assisted
+                    <div>
+                        387713003 |Surgical procedure (procedure)|:260507000 |Access (attribute)|=103388001 |Percutaneous approach - access (qualifier value)|,424226004 |Using device (attribute)|=82830000 |Robotic arm, device (physical object)|
+                    </div>
+                </div>
+                <div class="code">
+                    open
+                    <div>
+                        387713003 |Surgical procedure (procedure)|:260507000 |Access (attribute)|=129236007 |Open approach - access (qualifier value)|
+                    </div>
+                </div>
+            </div>
+            <div>
+
+            </div>
+            <div>
+                <div class="code">
+                    Incision <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        기타
+                        <div>
+                            387713003 |Surgical procedure (procedure)|:260507000 |Access (attribute)|=129236007 |Open approach - access (qualifier value)|
+                        </div>
+                    </div>
+            </div>
+            <div>
+                <div>
+                    upper midline <- Incision <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        upper midline
+                        <div>
+                            276917008 |Midline incision (procedure)|:405813007 |Procedure site - Direct (attribute)|=27947004 |Epigastric region structure (body structure)|
+                        </div>
+                    </div> 
+                </div>
+                <div>
+                    기타 <- Incision <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        기타
+                        <div>
+                            34896006 |Incision (procedure)|
+                        </div>
+                    </div> 
+                </div>
+                <div>
+                    Skin to peritoneum <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        yes
+                        <div>
+                           373572006 |Clinical finding absent (situation)|: 246090004 |Associated finding (attribute)|=( 89499009 |Adhesion of stomach (disorder)|: 363698007 |Finding site (attribute)|= 83670000 |Peritoneal cavity structure (body structure)|)
+                        </div>   
+                    </div> 
+                    <div class="code">
+                        NO
+                        <div>
+                            89499009 |Adhesion of stomach (disorder)|: 363698007 |Finding site (attribute)|= 83670000 |Peritoneal cavity structure (body structure)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Adhesion <- Peritoneal cavity <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        NO
+                        <div>
+                            373572006 |Clinical finding absent (situation)|: 246090004 |Associated finding (attribute)|=( 89499009 |Adhesion of stomach (disorder)|: 363698007 |Finding site (attribute)|= 83670000 |Peritoneal cavity structure (body structure)|)                        </div>   
+                    </div> 
+                    <div class="code">
+                        Yes
+                        <div>
+                            89499009 |Adhesion of stomach (disorder)|: 363698007 |Finding site (attribute)|= 83670000 |Peritoneal cavity structure (body structure)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Ascites <- Peritoneal cavity <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        NO
+                        <div>
+                            373572006 |Clinical finding absent (situation)|: 246090004 |Associated finding (attribute)|=( 89499009 |Adhesion of stomach (disorder)|: 363698007 |Finding site (attribute)|= 83670000 |Peritoneal cavity structure (body structure)|)                        </div>   
+                    </div> 
+                    <div class="code">
+                        YES
+                        <div>
+                            89499009 |Adhesion of stomach (disorder)|: 363698007 |Finding site (attribute)|= 83670000 |Peritoneal cavity structure (body structure)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Seeding <- Peritoneal cavity <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        yes
+                        <div>
+                            405843009 |Widespread metastatic malignant neoplastic disease (disorder)|                        
+                        </div>   
+                    </div> 
+                    <div class="code">
+                        no
+                        <div>
+                            373572006 |Clinical finding absent (situation)|:246090004 |Associated finding (attribute)|=405843009 |Widespread metastatic malignant neoplastic disease (disorder)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Seeding <- Peritoneal cavity <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        yes
+                        <div>
+                            405843009 |Widespread metastatic malignant neoplastic disease (disorder)|                   
+                        </div>   
+                    </div> 
+                    <div class="code">
+                        no
+                        <div>
+                            373572006 |Clinical finding absent (situation)|:246090004 |Associated finding (attribute)|=405843009 |Widespread metastatic malignant neoplastic disease (disorder)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Shelf <- Peritoneal cavity <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        yes
+                        <div>
+                            300848003 |Mass of body structure (finding)|: 363698007 |Finding site (attribute)|=53843000 |Structure of rectouterine pouch (body structure)|                  
+                        </div>   
+                    </div> 
+                    <div class="code">
+                        no
+                        <div>
+                            300870000 |No mass present (situation)|:246090004 |Associated finding (attribute)|=(300848003 |Mass of body structure (finding)|: 363698007 |Finding site (attribute)|=53843000 |Structure of rectouterine pouch (body structure)|)
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Mass <- Peritoneal cavity <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        yes
+                        <div>
+                            300848003 |Mass of body structure (finding)|: 363698007 |Finding site (attribute)|= 83670000 |Peritoneal cavity structure (body structure)|          
+                        </div>   
+                    </div> 
+                    <div class="code">
+                        no
+                        <div>
+                            300870000 |No mass present (situation)|:246090004 |Associated finding (attribute)|=(300848003 |Mass of body structure (finding)|: 363698007 |Finding site (attribute)|= 83670000 |Peritoneal cavity structure (body structure)|)
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Liver <- Peritoneal cavity <- *환자 정보(일부만 필수기록) <- 수술방법 및 소견
+                    <div class="code">
+                        normal
+                        <div>
+                            300337001 |Liver normal (finding)|   
+                        </div>   
+                    </div> 
+                    <div class="code">
+                        abnormal
+                        <div>
+                            300338006 |Liver problem (finding)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Laparoscopy assisted <- Laparoscopy <- 수술방법 및 소견
+                    <div class="code">
+                        YES
+                        <div>
+                            418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|=(21371007 |Operation on abdominal region (procedure)|:425391005 |Using access device (attribute)|=86174004 |Laparoscope, device (physical object)|)
+                        </div>   
+                    </div> 
+                    <div class="code">
+                        no
+                        <div>
+                            300338006 |Liver problem (finding)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Total laparoscopy <- Laparoscopy <- 수술방법 및 소견
+                    <div class="code">
+                        Total laparoscopy
+                        <div>
+                            177992007 |Therapeutic endoscopic operations on peritoneum (procedure)|
+                        </div>   
+                    </div> 
+                 
+                </div>
+                <div>
+                    Open <- Laparoscopy <- 수술방법 및 소견
+                    <div class="code">
+                        Total laparoscopy
+                        <div>
+                            86481000 |Laparotomy (procedure)|:363702006 |Has focus (attribute)|=51316009 |Laparoscopic procedure (procedure)|
+                        </div>   
+                    </div> 
+                </div>
+                <div>
+                    Conversion to open <- Laparoscopy <- 수술방법 및 소견
+                    <div class="code">
+                        Conversion to open
+                        <div>
+                            86481000 |Laparotomy (procedure)|
+                        </div>   
+                    </div> 
+                </div>
+                <div>
+                    Conversion to open <- Laparoscopy <- 수술방법 및 소견
+                    <div class="code">
+                        Conversion to open
+                        <div>
+                            86481000 |Laparotomy (procedure)|:363702006 |Has focus (attribute)|=사유
+                        </div>   
+                    </div> 
+                </div>
+                <div>
+                    Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        Conversion to open
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=부위}
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    ovary <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        ovary
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=15497006 |Ovarian structure (body structure)|}
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    spleen <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        spleen
+                        <div>
+                            553442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=78961009 |Splenic structure (body structure)|}
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    colon <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        colon
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=71854001 |Colon structure (body structure)|}
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    liver <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        liver
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=71854001 |Colon structure (body structure)|}
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    GB <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        GB
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=28231008 |Gallbladder structure (body structure)|}
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    pancreas head <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        pancreas head
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=28231008 |Gallbladder structure (body structure)|}
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    pancreas tail <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        pancreas tail
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=73239005 |Structure of tail of pancreas (body structure)|
+                        </div>   
+                    </div>
+                </div>
+
+                <div>
+                        none <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        none
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    
+                        adrenal gland <- Combined resection (+) <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        adrenal gland
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=23451007 |Adrenal structure (body structure)|}
+                        </div>   
+                    </div>
+                </div>
+                
+                <div>
+                    D1 <- Lymph node dissection <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        D1
+                        <div>
+                            446505009 |D1 lymph node dissection (procedure)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        D1
+                        <div>
+                            446505009 |D1 lymph node dissection (procedure)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        D2
+                        <div>
+                            446250007 |D2 lymph node dissection (procedure)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        D3
+                        <div>
+                            445774003 |D3 lymph node dissection (procedure)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        림프절 번호로 제시한 경우
+                        <div>
+                            11971000224104 |Dissection of lymph node (procedure)|:363698007 |Finding site (attribute)|=9390001 |Structure of lymphatic vessel of stomach (body structure)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    D1 <- Lymph node dissection <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        adrenal gland
+                        <div>
+                            53442002 |Excision of stomach structure (procedure)|:{260686004 |Method (attribute)|=129304002 |Excision - action (qualifier value)|,405813007 |Procedure site - Direct (attribute)|=23451007 |Adrenal structure (body structure)|}
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Reason for not performing D2 in AGC <- D1 <- Lymph node dissection <- Operation finding <- 수술방법 및 소견<br>
+                    템플릿 제공
+                    <div class="code">
+                        기본 템플릿 제공
+                        <div>
+                            446505009 |D1 lymph node dissection (procedure)|:363702006 |Has focus (attribute)|=
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    D1+ <- Lymph node dissection <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        D1+
+                        <div>
+                            11971000224104 |Dissection of lymph node (procedure)|:405813007 |Procedure site - Direct (attribute)|=59441001 |Structure of lymph node (body structure)|:733930001 |Regional part of (attribute)|=245284000 |Abdominal lymph node group (body structure)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Reason for not performing D2 in AGC <- D1+ <- Lymph node dissection <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        기본 템플릿 제공
+                        <div>
+                            11971000224104 |Dissection of lymph node (procedure)|:405813007 |Procedure site - Direct (attribute)|=59441001 |Structure of lymph node (body structure)|:733930001 |Regional part of (attribute)|=245284000 |Abdominal lymph node group (body structure)|,363702006 |Has focus (attribute)|=  
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    D2 <- Lymph node dissection <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        D2
+                        <div>
+                            446250007 |D2 lymph node dissection (procedure)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Stapler <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        EEA
+                        <div>
+                            363691001 |Procedure categorized by device involved (procedure)|:405813007 |Procedure site - Direct (attribute)|=701875006 |Endoscopic manual linear stapler (physical object)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        GIA
+                        <div>
+                            363691001 |Procedure categorized by device involved (procedure)|:405813007 |Procedure site - Direct (attribute)|=701876007 |Intraluminal circular stapler (physical object)|
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Stapler <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        EEA
+                        <div>
+                            363691001 |Procedure categorized by device involved (procedure)|:424226004 |Using device (attribute)|=701875006 |Endoscopic manual linear stapler (physical object)|,363704007 |Procedure site (attribute)|=
+                        </div>   
+                    </div>
+                    <div class="code">
+                        GIA
+                        <div>
+                            363691001 |Procedure categorized by device involved (procedure)|:424226004 |Using device (attribute)|=701876007 |Intraluminal circular stapler (physical object)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        기타 stapler
+                        <div>
+                            363691001 |Procedure categorized by device involved (procedure)|:424226004 |Using device (attribute)|=705698006 |Endoscopic stapler (physical object)|
+                    </div>
+                </div>
+                <div>
+                    위치 <- Stapler <- Operation finding <- 수술방법 및 소견
+                    <br>템플릿 제공
+                    <div class="code">
+                        EEA
+                        <div>
+                            363691001 |Procedure categorized by device involved (procedure)|:424226004 |Using device (attribute)|=701875006 |Endoscopic manual linear stapler (physical object)|,363704007 |Procedure site (attribute)|=
+                        </div>   
+                    </div>
+                    <div class="code">
+                        GIA
+                        <div>
+                            363691001 |Procedure categorized by device involved (procedure)|:424226004 |Using device (attribute)|=701876007 |Intraluminal circular stapler (physical object)|,363704007 |Procedure site (attribute)|=
+                        </div>   
+                    </div>
+                    <div class="code">
+                        기타 stapler
+                        <div>
+                            363691001 |Procedure categorized by device involved (procedure)|:424226004 |Using device (attribute)|=705698006 |Endoscopic stapler (physical object)|,363704007 |Procedure site (attribute)|=
+                        </div>   
+                    </div>
+                </div>
+                <div>
+                    Drain <- Operation finding <- 수술방법 및 소견
+                    <br>부위는 맵핑하지 말것
+                    <div class="code">
+                        drain(device 언급 x)
+                        <div>
+                            698956007 |Insertion of drain (procedure)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        Jackson-Pratt drain
+                        <div>
+                            698956007 |Insertion of drain (procedure)|:405815000 |Procedure device (attribute)|=385621003 |Jackson - Pratt drain, device (physical object)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        NO drain
+                        <div>
+                            418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|=698956007 |Insertion of drain (procedure)|
+                        </div>   
+                    </div>
+                   
+                </div>
+                <div>
+                    Trasfusion <- Operation finding <- 수술방법 및 소견
+                    <br>부위는 맵핑하지 말것
+                    <div class="code">
+                        yes
+                        <div>
+                            5447007 |Transfusion (procedure)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        no
+                        <div>
+                            418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|=5447007 |Transfusion (procedure)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        RBC
+                        <div>
+                            4274501008 |Serum transfusion (procedure)|
+                        </div>   
+                    </div>
+                    <div class="code">
+                        FFP
+                        <div>
+                            116861002 |Transfusion of fresh frozen plasma (procedure)|
+                        </div>   
+                    </div>
+                   <div>
+                    cc <- Estimated blood loss <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        항목만 맵핑
+                        <div>
+                            409084000 |Estimated blood loss (observable entity)|:704326004 |Precondition (attribute)|=387713003 |Surgical procedure (procedure)|
+                        </div>  
+                   </div>
+                </div>
+                <div>
+                    min <- Operation time <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        항목만 맵핑
+                        <div>
+                            371767005 |Length of procedure (observable entity)|:767525000 |Unit (qualifier value)|=1156209001 |minute (qualifier value)|,704326004 |Precondition (attribute)|=387713003 |Surgical procedure (procedure)|
+                        </div>  
+                   </div>
+                </div>
+                <div>
+                    Irrigation <- Operation finding <- 수술방법 및 소견
+                    <div class="code">
+                        yes
+                        <div>
+                            67889009 |Irrigation (procedure)|
+                        </div>  
+                   </div>
+                   <div class="code">
+                    NO
+                        <div>
+                            418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|=67889009 |Irrigation (procedure)|
+                        </div>  
+                    </div>
+                </div>
+                <div>
+                    Complication <- Operation finding <- 수술방법 및 소견<BR>
+                        수술중 합병증을 의미함
+                    <div class="code">
+                        yes
+                        <div>
+                            738778005 |Intraoperative complication (disorder)|
+                        </div>  
+                   </div>
+                   <div class="code">
+                    NO
+                        <div>
+                            373572006 |Clinical finding absent (situation)|:246090004 |Associated finding (attribute)|=738778005 |Intraoperative complication (disorder)|
+                        </div>  
+                    </div>
+                    <div class="code">
+                        기타 질병(템플릿 제공)
+                            <div>
+                                질병명:371881003 |During (attribute)|=387713003 |Surgical procedure (procedure)|
+                            </div>  
+                    </div>
+                </div>
+                <div>
+                    LN enlargement <- Operation finding <- 수술방법 및 소견
+                    <br> 상세한 번호가 있더라도 yes로 맵핑할것
+                    <div class="code">
+                        yes
+                            <div>
+                                128235003 |Disorder of intra-abdominal lymph nodes (disorder)|
+                            </div> 
+                    </div>
+                    <div class="code">
+                        no
+                            <div>
+                                274621000 |Lymphadenopathy absent (situation)|
+                            </div> 
+                    </div>
+                </div>
+            <div>
+            Distant meta. <- Operation finding <- 수술방법 및 소견
+                <div class="code">
+                    yes
+                        <div>
+                            399409002 |Distant metastasis present (finding)|
+                        </div> 
+                </div>
+                <div class="code">
+                    no
+                    <div>
+                        399581003 |Tumor involvement of noncontiguous structures absent (finding)|
+                    </div> 
+               </div> 
+            </div>
+            <div>
+                <div>
+                    Distant metastasis <- Operation finding <- 수술방법 및 소견
+                        <div class="code">
+                            yes
+                                <div>
+                                    399409002 |Distant metastasis present (finding)|
+                                </div> 
+                        </div>
+                        
+                   
+                    <div class="code">
+                        no
+                        <div>
+                            399581003 |Tumor involvement of noncontiguous structures absent (finding)|
+                        </div> 
+                   </div> 
+                   <div class="code">
+                    M0
+                    <div>
+                        30893008 |M0 category (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M1
+                    <div>
+                        55440008 |M1 category (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M1a
+                    <div>
+                        261927002 |Metastasis stage M1a (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M1b
+                    <div>
+                        261928007 |Metastasis stage M1b (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M1c
+                    <div>
+                        261929004 |Metastasis stage M1c (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M2
+                    <div>
+                        258297005 |Metastasis stage M2 (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                    M3
+                    <div>
+                        258298000 |Metastasis stage M3 (finding)|
+                    </div>
+                </div>
+                <div class="code">
+                  M4
+                    <div>
+                        M4258298000 |Metastasis stage M4 (finding)|
+                    </div>
+                </div>
+            </div>
+        <div>
+            Radicality <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                RX
+                  <div>
+                    258253006 |Residual tumor stage RX (finding)|
+                  </div>
+              </div>
+            <div class="code">
+                R0
+                  <div>
+                    258254000 |Residual tumor stage R0 (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                R1
+                  <div>
+                    278271003 |Residual tumor stage R1 (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                R2
+                  <div>
+                    278272005 |Residual tumor stage R2 (finding)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            curative(radical) <- Operation for malignancy <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                curative(radical)
+                  <div>
+                    62141006 |Radical excision (procedure)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            curative(radical, extended) <- Operation for malignancy <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                curative(radical, extended)
+                  <div>
+                    62141006 |Radical excision (procedure)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            palliative <- Operation for malignancy <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                palliative
+                  <div>
+                    362964009 |Palliative procedure (procedure)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            O and C <- Operation for malignancy <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                O and C
+                  <div>
+                    397023003 |Operation not completed (situation)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            Location of lesion <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                proxima stomach part
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=116209005 |Proximal stomach structure (body structure)|
+                  </div>
+              </div>
+              <div class="code">
+                gastric corpus
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=68560004 |Gastric corpus structure (body structure)|
+                  </div>
+              </div>
+              <div class="code">
+                upper stomach body
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=361534007 |Structure of upper body of stomach (body structure)|
+                  </div>
+              </div>
+              <div class="code">
+                middle stomach body
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=361535008 |Structure of mid body of stomach (body structure)|
+                  </div>
+              </div>
+              <div class="code">
+                stomach lower body
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=361536009 |Structure of lower body of stomach (body structure)|
+                  </div>
+              </div>
+              <div class="code">
+                greater cx
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=89382009 |Structure of greater curvature of stomach (body structure)|
+                  </div>
+              </div>
+              <div class="code">
+                lesser cx
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=80085006 |Structure of lesser curvature of stomach (body structure)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            Size ( ) x ( ) cm <- Location of lesion <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                항목에 대해서만 매핑
+                  <div>
+                    372300005 |Tumor size, dimension 2 (observable entity)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            Location (in recur) <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                proxima stomach part
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=116209005 |Proximal stomach structure (body structure)|, 263502005 |Clinical course (attribute)|=255227004 |Recurrent (qualifier value)|
+                  </div>
+              </div>
+              <div class="code">
+                gastric corpus
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=68560004 |Gastric corpus structure (body structure)|, 263502005 |Clinical course (attribute)|=255227004 |Recurrent (qualifier value)|
+                  </div>
+              </div>
+              <div class="code">
+                upper stomach body
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=361534007 |Structure of upper body of stomach (body structure)|, 263502005 |Clinical course (attribute)|=255227004 |Recurrent (qualifier value)|
+                  </div>
+              </div>
+              <div class="code">
+                middle stomach body
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=361535008 |Structure of mid body of stomach (body structure)|, 263502005 |Clinical course (attribute)|=255227004 |Recurrent (qualifier value)|
+                  </div>
+              </div>
+              <div class="code">
+                stomach lower body
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=361536009 |Structure of lower body of stomach (body structure)|, 263502005 |Clinical course (attribute)|=255227004 |Recurrent (qualifier value)|
+                  </div>
+              </div>
+              <div class="code">
+                greater cx
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=89382009 |Structure of greater curvature of stomach (body structure)|, 263502005 |Clinical course (attribute)|=255227004 |Recurrent (qualifier value)|
+                  </div>
+              </div>
+              <div class="code">
+                lesser cx
+                  <div>
+                    300296006 |Lesion of stomach (finding)|:363698007 |Finding site (attribute)|=80085006 |Structure of lesser curvature of stomach (body structure)|, 263502005 |Clinical course (attribute)|=255227004 |Recurrent (qualifier value)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            Size ( ) x ( ) cm <- Location (in recur) <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                항목에 대해서만 매핑
+                  <div>
+                    372300005 |Tumor size, dimension 2 (observable entity)|:704326004 |Precondition (attribute)|=25173007 |Recurrent tumor (finding)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            Number of lesion <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                single lesion(병변이 1개)
+                  <div>
+                    300580009 |Single lesion (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                multiple lesion(병변이 2개 이상)
+                  <div>
+                    300582001 |Multiple lesions (finding)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            No. of lesion <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                single lesion(병변이 1개)
+                  <div>
+                    300580009 |Single lesion (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                multiple lesion(병변이 2개 이상)
+                  <div>
+                    300582001 |Multiple lesions (finding)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            Biopsy <- Operation finding <- 수술방법 및 소견<br>
+            yes, no로 나오는 경우 생검 여부에 대해서 표시하는 것임. <br>
+            yes no가 아닌 경우 418775008 |Finding method (attribute)|=86273004 |Biopsy (procedure)| 으로 매핑할것
+            <div class="code">
+                yes
+                  <div>
+                    274330002 |Surgical biopsy (procedure)|
+                  </div>
+              </div>
+              <div class="code">
+                no
+                  <div>
+                    418014008 |Procedure not ordered (situation)|:363589002 |Associated procedure (attribute)|= 274330002 |Surgical biopsy (procedure)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            Frozen biopsy <- Operation finding <- 수술방법 및 소견<br>
+            yes, no로 나오는 경우 생검 여부에 대해서 표시하는 것임. 
+            <div class="code">
+                normal
+                  <div>
+                    165131004 |Surgical biopsy result normal (finding)|:116676008 |Associated morphology (attribute)|= 1370001000004102 |Proximal surgical margin (morphologic abnormality)|,116676008 |Associated morphology (attribute)|=880001000004108 |Distal surgical margin (morphologic abnormality)|418775008 |Finding method (attribute)|=(714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+              <div class="code">
+                abnormal
+                  <div>
+                    165132006 |Surgical biopsy result abnormal (finding)|:116676008 |Associated morphology (attribute)|= 1370001000004102 |Proximal surgical margin (morphologic abnormality)|,116676008 |Associated morphology (attribute)|=880001000004108 |Distal surgical margin (morphologic abnormality)|418775008 |Finding method (attribute)|=(714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+            
+              <div class="code">
+                yes
+                  <div>
+                    1714797009 |Histologic test (procedure)|: {260686004 |Method (attribute)|=360028004 |Surgical biopsy - action (qualifier value)|, 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|}
+                  </div>
+              </div>
+              <div class="code">
+                no
+                  <div>
+                    418014008 |Procedure not ordered (situation)|:(363589002 |Associated procedure (attribute)|=714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+        </div>
+        <div>
+            frozen <- Resection margin <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                negative
+                  <div>
+                    165131004 |Surgical biopsy result normal (finding)|:116676008 |Associated morphology (attribute)|= 871811002 |Surgical margin (morphologic abnormality)|, 418775008 |Finding method (attribute)|=(714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+              <div class="code">
+                positive
+                  <div>
+                    165132006 |Surgical biopsy result abnormal (finding)|:116676008 |Associated morphology (attribute)|= 871811002 |Surgical margin (morphologic abnormality)|, 418775008 |Finding method (attribute)|=(714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+        </div>
+        <div>
+            frozen <- dist. <- Resection margin <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                negative
+                  <div>
+                    165131004 |Surgical biopsy result normal (finding)|:116676008 |Associated morphology (attribute)|= 880001000004108 |Distal surgical margin (morphologic abnormality)|, 418775008 |Finding method (attribute)|=(714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+              <div class="code">
+                positive
+                  <div>
+                    165132006 |Surgical biopsy result abnormal (finding)|: 116676008 |Associated morphology (attribute)|= 880001000004108 |Distal surgical margin (morphologic abnormality)|, 418775008 |Finding method (attribute)|=(714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+        </div>
+        <div>
+            cm <- dist. <- Resection margin <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                항목에 대해서만 매핑
+                  <div>
+                   271935000 |Biopsy interpretation (observable entity)|:704319004 |Inheres in (attribute)| = 880001000004108 |Distal surgical margin (morphologic abnormality)|,704327008 |Direct site (attribute)| = (439479000 |Tissue specimen obtained by excision (specimen):118171006 |Specimen procedure (attribute)|=65801008 |Excision (procedure)|),370130000 |Property (attribute)|=410668003 |Length property (qualifier value)|,246514001 |Units (attribute)|=258672001 |Centimeter (qualifier value)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            frozen <- prox. <- Resection margin <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                negative
+                  <div>
+                    165131004 |Surgical biopsy result normal (finding)|:116676008 |Associated morphology (attribute)|= 1370001000004102 |Proximal surgical margin (morphologic abnormality)|, 418775008 |Finding method (attribute)|=(714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+              <div class="code">
+                positive
+                  <div>
+                    165132006 |Surgical biopsy result abnormal (finding)|:116676008 |Associated morphology (attribute)|= 1370001000004102 |Proximal surgical margin (morphologic abnormality)|, 418775008 |Finding method (attribute)|=(714797009 |Histologic test (procedure)|: 116686009 |Has specimen (attribute)|= 16214131000119104 |Frozen tissue section sample (specimen)|)
+                  </div>
+              </div>
+        </div>
+        <div>
+            cm <- prox. <- Resection margin <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                항목에 대해서만 매핑
+                  <div>
+                   271935000 |Biopsy interpretation (observable entity)|:704319004 |Inheres in (attribute)| = 1370001000004102 |Proximal surgical margin (morphologic abnormality)|,704327008 |Direct site (attribute)| = (439479000 |Tissue specimen obtained by excision (specimen):118171006 |Specimen procedure (attribute)|=65801008 |Excision (procedure)|),370130000 |Property (attribute)|=410668003 |Length property (qualifier value)|,246514001 |Units (attribute)|=258672001 |Centimeter (qualifier value)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            Washing Cytology <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                negative
+                  <div>
+                    5559008 |Normal cytology findings (finding)|:418775008 |Finding method (attribute)|=(168440009 |Cytology examination - general (procedure)|:116686009 |Has specimen (attribute)|=431771004 |Cytologic material obtained from ascitic fluid (specimen)|)
+                  </div>
+              </div>
+              <div class="code">
+                positive
+                  <div>
+                    309196005 |Abnormal cytology findings (finding)|:418775008 |Finding method (attribute)|=(168440009 |Cytology examination - general (procedure)|:116686009 |Has specimen (attribute)|=431771004 |Cytologic material obtained from ascitic fluid (specimen)|)
+                  </div>
+              </div>
+        </div>
+        <div>
+            Washing Cytology <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                negative
+                  <div>
+                    5559008 |Normal cytology findings (finding)|:418775008 |Finding method (attribute)|=(168440009 |Cytology examination - general (procedure)|:116686009 |Has specimen (attribute)|=431771004 |Cytologic material obtained from ascitic fluid (specimen)|)
+                  </div>
+              </div>
+              <div class="code">
+                positive
+                  <div>
+                    309196005 |Abnormal cytology findings (finding)|:418775008 |Finding method (attribute)|=(168440009 |Cytology examination - general (procedure)|:116686009 |Has specimen (attribute)|=431771004 |Cytologic material obtained from ascitic fluid (specimen)|)
+                  </div>
+              </div>
+        </div>
+        <div>
+            EGC <- Gross type <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                EGC Type I
+                  <div>
+                    396554002 |Flat tumor (finding)|+413282009 |Protruding tumor lesion (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                EGC Type IIa
+                  <div>
+                    396554002 |Flat tumor (finding)|+396553008 |Raised tumor (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                EGC Type IIb,IIc,III
+                  <div>
+                    396554002 |Flat tumor (finding)|
+                  </div>
+              </div>
+        </div>
+        <div>
+            ＋ <- EGC <- Gross type <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                EGC Type I
+                  <div>
+                    396554002 |Flat tumor (finding)|+413282009 |Protruding tumor lesion (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                EGC Type IIa
+                  <div>
+                    396554002 |Flat tumor (finding)|+396553008 |Raised tumor (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                EGC Type IIb,IIc,III
+                  <div>
+                    396554002 |Flat tumor (finding)|
+                  </div>
+              </div>
+        </div>
+        
+            <div>
+                ＋ <- EGC <- Gross type <- Operation finding <- 수술방법 및 소견
+                <div class="code">
+                    EGC Type I
+                      <div>
+                        413281002 |Fungating tumor (finding)|
+                      </div>
+                  </div>
+                  <div class="code">
+                    EGC Type IIa
+                      <div>
+                        396554002 |Flat tumor (finding)|+396553008 |Raised tumor (finding)|
+                      </div>
+                  </div>
+                  <div class="code">
+                    EGC Type IIb,IIc,III
+                      <div>
+                        396554002 |Flat tumor (finding)|
+                      </div>
+                  </div>
+            </div>
+           <div>
+            Borrmann <- Gross type <- Operation finding <- 수술방법 및 소견
+            <div class="code">
+                Borrmann type 1
+                  <div>
+                    413281002 |Fungating tumor (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                Borrmann type 2
+                  <div>
+                    369760009 |Ulcerated tumor configuration (finding)|+396553008 |Raised tumor (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                Borrmann type 3
+                  <div>
+                    369760009 |Ulcerated tumor configuration (finding)|+370070005 |Tumor invasion into muscular wall AND/OR subserosa (finding)|
+                  </div>
+              </div>
+              <div class="code">
+                Borrmann type 4
+                  <div>
+                    369748008 |Diffusely infiltrative (linitis plastica) tumor configuration (finding)|
+                  </div>
+              </div>
+            </div>
+            <h2>
+                procedure<-수술 방법 및 소견
+            </h2>
+            <ol>
+                <li>
+                    전신 마취
+                    <ul>
+                        <li>
+                            274507007 |Operative general anesthesia (procedure)|
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    체위
+                    <ul>
+                        <li>
+                            40199007 |Supine body position (finding)|
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    skin prepare
+                    <ul>
+                        <li>
+                            28792004 |Preoperative preparation of skin (procedure)|
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    surgical drape
+                    <ul>
+                        <li>
+                            397819007 |Application of surgical drapes (procedure)|
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    incision
+                    <ul>
+                        <li>
+                            <label><input type="checkbox" id="incision_5hole" name="incision" >5 hole</label> 
+                            <label><input type="checkbox" id="incision_uppermidline" name="uppermiddleincision">upper middle incision</label>
+                    
+                            <input type="button" value="매핑"class="mapping1" ><input type="button" value="reset">
+                        </li>
+                        <li>
+                            <input type="text" id="incisionmap">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    ligation
+                    <ul>
+                        <li>
+                            <label><input type="checkbox" id="ligation1" name="ligation" value="0" >LGA</label>
+                            <label><input type="checkbox" id="ligation2" name="ligation" value="1">LGE.a</label> 
+                            <label><input type="checkbox" id="ligation3" name="ligation" value="2">LGV</label> 
+                            <label><input type="checkbox" id="ligation4" name="ligation" value="3">LGE.v</label> 
+                            <label><input type="checkbox" id="ligation5" name="ligation" value="4">RGA</label> 
+                            <label><input type="checkbox" id="ligation6" name="ligation" value="5">RGE.a</label> 
+                            <label><input type="checkbox" id="ligation6" name="ligation" value="5">RGV</label> 
+                            <label><input type="checkbox" id="ligation7" name="ligation" value="6">RGE.v</label>
+                            <label><input type="checkbox" id="ligation8" name="ligation" value="7">stomach lymph</label>
+                            <label><input type="checkbox" id="ligation9" name="ligation" value="8">proximal stomach boody</label>
+                            <label><input type="checkbox" id="ligation10" name="ligation" value="9">gastric corpus</label>
+                            <label><input type="checkbox" id="ligation11" name="ligation" value="10">upper stomach body</label>
+                            <label><input type="checkbox" id="ligation12" name="ligation" value="11">middle stomach body</label>
+                            <label><input type="checkbox" id="ligation13" name="ligation" value="12">lower stomach body</label>
+                            <label><input type="checkbox" id="ligation13" name="ligation" value="13">grater CX</label>
+                            <label><input type="checkbox" id="ligation14" name="ligation" value="14">lower CX</label>
+                            <label><input type="checkbox" id="ligation15" name="ligation" value="15">duodenal structure</label>
+                            <label><input type="checkbox" id="ligation16" name="ligation" value="16">stomach pyloric structure</label>
+                            
+                        </li>
+                        <li>
+                            <label><input type="checkbox" id="ligationdevice0" name="ligationdevice" value="0">GIA</label>
+                            <label><input type="checkbox" id="ligationdevice1" name="ligationdevice" value="1">EEA</label>
+
+                        </li>
+                        <li>
+                            <input type="button" value="매핑"class="mapping2">
+                        </li>
+                        <li>
+                            <input type="text" id="ligationmap">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    divide
+                    <ul>
+                        <li>
+                            <label><input type="checkbox" id="divide1" name="divide" value="0" >LGA</label>
+                            <label><input type="checkbox" id="divide2" name="divide" value="1">LGE.a</label> 
+                            <label><input type="checkbox" id="divide3" name="divide" value="2">LGV</label> 
+                            <label><input type="checkbox" id="divide4" name="divide" value="3">LGE.v</label> 
+                            <label><input type="checkbox" id="divide5" name="divide" value="4">RGA</label> 
+                            <label><input type="checkbox" id="divide6" name="divide" value="5">RGE.a</label> 
+                            <label><input type="checkbox" id="divide6" name="divide" value="5">RGV</label> 
+                            <label><input type="checkbox" id="divide7" name="divide" value="6">RGE.v</label>
+                            <label><input type="checkbox" id="divide8" name="divide" value="7">stomach lymph</label>
+                            <label><input type="checkbox" id="divide9" name="divide" value="8">proximal stomach boody</label>
+                            <label><input type="checkbox" id="divide10" name="divide" value="9">gastric corpus</label>
+                            <label><input type="checkbox" id="divide11" name="divide" value="10">upper stomach body</label>
+                            <label><input type="checkbox" id="divide12" name="divide" value="11">middle stomach body</label>
+                            <label><input type="checkbox" id="divide13" name="divide" value="12">lower stomach body</label>
+                            <label><input type="checkbox" id="divide14" name="divide" value="13">grater CX</label>
+                            <label><input type="checkbox" id="divide15" name="divide" value="14">lower CX</label>
+                            <label><input type="checkbox" id="divide16" name="divide" value="15">duodenal structure</label>
+                            <label><input type="checkbox" id="divide17" name="divide" value="16">stomach pyloric structure</label>
+                            
+                        </li>
+                        <li>
+                            <label><input type="checkbox" id="dividedevice0" name="dividedevice" value="0" >GIA</label>
+                            <label><input type="checkbox" id="dividedevice1" name="dividedevice" value="1" >EEA</label>
+                            <label><input type="checkbox" id="dividedevice2" name="dividedevice" value="2" >clamp</label>
+
+                        </li>
+                        <li>
+                            <input type="button" value="매핑"class="mapping3">
+                        </li>
+                        <li>
+                            <input type="text" id="dividemap">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    clearing(trimming)
+                    <ul>
+                        <li>
+                            <label><input type="checkbox" id="trimming1" name="trimming" value="0" >LGA</label>
+                            <label><input type="checkbox" id="trimming2" name="trimming" value="1">LGE.a</label> 
+                            <label><input type="checkbox" id="trimming3" name="trimming" value="2">LGV</label> 
+                            <label><input type="checkbox" id="trimming4" name="trimming" value="3">LGE.v</label> 
+                            <label><input type="checkbox" id="trimming5" name="trimming" value="4">RGA</label> 
+                            <label><input type="checkbox" id="trimming6" name="trimming" value="5">RGE.a</label> 
+                            <label><input type="checkbox" id="trimming6" name="trimming" value="5">RGV</label> 
+                            <label><input type="checkbox" id="trimming7" name="trimming" value="6">RGE.v</label>
+                            <label><input type="checkbox" id="trimming8" name="trimming" value="7">stomach lymph</label>
+                            <label><input type="checkbox" id="trimming9" name="trimming" value="8">proximal stomach boody</label>
+                            <label><input type="checkbox" id="trimming10" name="trimming" value="9">gastric corpus</label>
+                            <label><input type="checkbox" id="trimming11" name="trimming" value="10">upper stomach body</label>
+                            <label><input type="checkbox" id="trimming12" name="trimming" value="11">middle stomach body</label>
+                            <label><input type="checkbox" id="trimming13" name="trimming" value="12">lower stomach body</label>
+                            <label><input type="checkbox" id="trimming14" name="trimming" value="13">grater CX</label>
+                            <label><input type="checkbox" id="trimming15" name="trimming" value="14">lower CX</label>
+                            <label><input type="checkbox" id="trimming16" name="trimming" value="15">duodenal structure</label>
+                            <label><input type="checkbox" id="trimming17" name="trimming" value="16">stomach pyloric structure</label>
+                            
+                        </li>
+                        <li>
+                            <label><input type="checkbox" id="trimmingdevice0" name="trimmingdevice" value="0" >GIA</label>
+                            <label><input type="checkbox" id="trimmingdevice1" name="trimmingdevice" value="1" >EEA</label>
+                            <label><input type="checkbox" id="trimmingdevice2" name="trimmingdevice" value="2" >clamp</label>
+
+                        </li>
+                        <li>
+                            <input type="button" value="매핑"class="mapping4">
+                        </li>
+                        <li>
+                            <input type="text" id="trimmingmap">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    mobilization
+                    <ul>
+                        <li>
+                            <label><input type="checkbox" id="mobilization1" name="mobilization" value="0" >LGA</label>
+                            <label><input type="checkbox" id="mobilization2" name="mobilization" value="1">LGE.a</label> 
+                            <label><input type="checkbox" id="mobilization3" name="mobilization" value="2">LGV</label> 
+                            <label><input type="checkbox" id="mobilization4" name="mobilization" value="3">LGE.v</label> 
+                            <label><input type="checkbox" id="mobilization5" name="mobilization" value="4">RGA</label> 
+                            <label><input type="checkbox" id="mobilization6" name="mobilization" value="5">RGE.a</label> 
+                            <label><input type="checkbox" id="mobilization6" name="mobilization" value="5">RGV</label> 
+                            <label><input type="checkbox" id="mobilization7" name="mobilization" value="6">RGE.v</label>
+                            <label><input type="checkbox" id="mobilization8" name="mobilization" value="7">stomach lymph</label>
+                            <label><input type="checkbox" id="mobilization9" name="mobilization" value="8">proximal stomach boody</label>
+                            <label><input type="checkbox" id="mobilization10" name="mobilization" value="9">gastric corpus</label>
+                            <label><input type="checkbox" id="mobilization11" name="mobilization" value="10">upper stomach body</label>
+                            <label><input type="checkbox" id="mobilization2" name="mobilization" value="11">middle stomach body</label>
+                            <label><input type="checkbox" id="mobilization13" name="mobilization" value="12">lower stomach body</label>
+                            <label><input type="checkbox" id="mobilization14" name="mobilization" value="13">grater CX</label>
+                            <label><input type="checkbox" id="mobilization15" name="mobilization" value="14">lower CX</label>
+                            <label><input type="checkbox" id="mobilization16" name="mobilization" value="15">duodenal structure</label>
+                            <label><input type="checkbox" id="mobilization17" name="mobilization" value="16">stomach pyloric structure</label>
+                            
+                        </li>
+                        <li>
+                            <label><input type="checkbox" id="mobilizationdevice0" name="mobilizationdevice" value="0" >GIA</label>
+                            <label><input type="checkbox" id="mobilizationdevice1" name="mobilizationdevice" value="1" >EEA</label>
+                            <label><input type="checkbox" id="mobilizationdevice2" name="mobilizationdevice" value="2" >clamp</label>
+
+                        </li>
+                        <li>
+                            <input type="button" value="매핑"class="mapping5">
+                        </li>
+                        <li>
+                            <input type="text" id="mobilizationmap">
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    anastomosis
+                    <ul>
+                        <li>
+                            <label><input type="checkbox" id="anastomosis1" name="anastomosis" value="0" >LGA</label>
+                            <label><input type="checkbox" id="anastomosis2" name="anastomosis" value="1">LGE.a</label> 
+                            <label><input type="checkbox" id="anastomosis3" name="anastomosis" value="2">LGV</label> 
+                            <label><input type="checkbox" id="anastomosis4" name="anastomosis" value="3">LGE.v</label> 
+                            <label><input type="checkbox" id="anastomosis5" name="anastomosis" value="4">RGA</label> 
+                            <label><input type="checkbox" id="anastomosis6" name="anastomosis" value="5">RGE.a</label> 
+                            <label><input type="checkbox" id="anastomosis6" name="anastomosis" value="5">RGV</label> 
+                            <label><input type="checkbox" id="anastomosis7" name="anastomosis" value="6">RGE.v</label>
+                            <label><input type="checkbox" id="anastomosis8" name="anastomosis" value="7">stomach lymph</label>
+                            <label><input type="checkbox" id="anastomosis9" name="anastomosis" value="8">proximal stomach boody</label>
+                            <label><input type="checkbox" id="anastomosis10" name="anastomosis" value="9">gastric corpus</label>
+                            <label><input type="checkbox" id="anastomosis11" name="anastomosis" value="10">upper stomach body</label>
+                            <label><input type="checkbox" id="anastomosis12" name="anastomosis" value="11">middle stomach body</label>
+                            <label><input type="checkbox" id="anastomosis13" name="anastomosis" value="12">lower stomach body</label>
+                            <label><input type="checkbox" id="anastomosis14" name="anastomosis" value="13">grater CX</label>
+                            <label><input type="checkbox" id="anastomosis15" name="anastomosis" value="14">lower CX</label>
+                            <label><input type="checkbox" id="anastomosis16" name="anastomosis" value="15">duodenal structure</label>
+                            <label><input type="checkbox" id="anastomosis17" name="anastomosis" value="16">stomach pyloric structure</label>
+                            
+                        </li>
+                        <li>
+                            <label><input type="checkbox" id="anastomosisdevice0" name="anastomosisdevice" value="0" >GIA</label>
+                            <label><input type="checkbox" id="anastomosisdevice1" name="anastomosisdevice" value="1" >EEA</label>
+                            <label><input type="checkbox" id="anastomosisdevice2" name="anastomosisdevice" value="2" >clamp</label>
+
+                        </li>
+                        <li>
+                            <label><input type="radio" id="anastomosismethod0" name="anastomosismethod" value="0" >delta</label>
+                            <label><input type="radio" id="anastomosismethod1" name="anastomosismethod" value="1">tornado</label>
+                            <label><input type="radio" id="anastomosismethod2" name="anastomosismethod" value="2">billroth 1</label>
+                            <label><input type="radio" id="anastomosismethod3" name="anastomosismethod" value="3">end to end</label>
+                            <label><input type="radio" id="anastomosismethod4" name="anastomosismethod" value="4">side to end</label>
+                            <label><input type="radio" id="anastomosismethod5" name="anastomosismethod" value="5">side to side</label>
+                            <label><input type="radio" id="anastomosismethod6" name="anastomosismethod" value="6">end to side</label>
+                            <label><input type="radio" id="anastomosismethod7" name="anastomosismethod" value="7">roux-en-y</label>
+                            <label><input type="radio" id="anastomosismethod8" name="anastomosismethod" value="8">anastomosis</label>
+                        </li>
+                        <li>
+                            <input type="button" value="매핑"class="mapping6">
+                        </li>
+                        <li>
+                            <input type="text" id="anastomosismap">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    L-tube insertion(부위 맵핑 하지 말것)
+                    <ul>
+                        <li>
+                            87750000 |Insertion of nasogastric tube (procedure)|
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    drain 매핑(jp 유무에 따라서 매핑/부위는 right flank, left flank만 할것)
+                    <ul>
+                       
+                        <li>
+                            jp드레인(X)<br>
+                            238286001 |Insertion of peritoneal drain (procedure)|
+                        </li>
+                        <li>
+                            jp드레인(O)<br>
+                            698956007 |Insertion of drain (procedure)|:405815000 |Procedure device (attribute)|=385621003 |Jackson - Pratt drain, device (physical object)|
+    
+                        </li>
+                        <li>
+                            jp drain(right and left)<br>
+                            698956007 |Insertion of drain (procedure)|:(363704007 |Procedure site (attribute)|=22943007 |Trunk structure (body structure)|:272741003 |Laterality (attribute)|=51440002 |Right and left (qualifier value)|),405815000 |Procedure device (attribute)|=385621003 |Jackson - Pratt drain, device (physical object)|
+                        </li>
+                        <li>
+                            jp drain(right)<br>
+                            698956007 |Insertion of drain (procedure)|:(363704007 |Procedure site (attribute)|=22943007 |Trunk structure (body structure)|:272741003 |Laterality (attribute)|=24028007 |Right (qualifier value)|),405815000 |Procedure device (attribute)|=385621003 |Jackson - Pratt drain, device (physical object)|
+                        </li>
+                        <li>
+                            jp drain(right and left)<br>
+                            698956007 |Insertion of drain (procedure)|:(363704007 |Procedure site (attribute)|=22943007 |Trunk structure (body structure)|:272741003 |Laterality (attribute)|=7771000 |Left (qualifier value)|),405815000 |Procedure device (attribute)|=385621003 |Jackson - Pratt drain, device (physical object)|
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    irrigation(식염수 언급시에만 식염수 코딩할것)
+                    <ul>
+                        67889009 |Irrigation (procedure)|
+                    </ul>
+                    <ul>
+                        식염수 포함 매핑<br>
+                        67889009 |Irrigation (procedure)|:424361007 |Using substance (attribute)|=373757009 |Sodium chloride solution (substance)|
+                    </ul>
+                </li>
+                <li>
+                    operation wound layer close
+                    <ul>
+                        <li>
+                            118450008 |Layer closure procedure (procedure)|:405816004 |Procedure morphology (attribute)|=112633009 |Surgical wound (morphologic abnormality)|
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    드레싱(occlusive 언급 유무에 따라 매핑)
+                    <ul>
+                        <li>
+                            occlusive X <br>
+                            58828004 |Application of dressing, sterile (procedure)|
+                        </li>
+                        <li>
+                            22206003 |Application of dressing, occlusive plastic (procedure)|:424226004 |Using device (attribute)|=(333453004 |Medical dressing (physical object)|:1148965004 |Is sterile (attribute)|=31874001 |True (qualifier value)|)
+                        </li>
+                    </ul>
+                </li>
+                    
+            </ol>
+            <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.js"
+            integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+            crossorigin="anonymous"></script>
+            <script>
+               var body_structure=['23771002 |Structure of left gastric artery (body structure)|',
+               	                    '67671005 |Structure of left gastroepiploic artery (body structure)|',
+                                    '49253009 |Structure of left gastric vein (body structure)|',
+                                    '68180009 |Structure of left gastroepiploic vein (body structure)|',
+                                    '34990004 |Structure of right gastric artery (body structure)|',
+                                    '56439003 |Structure of right gastroepiploic artery (body structure)|',
+                                    '16625006 |Structure of right gastric vein (body structure)|',
+                                    '20113003 |Structure of right gastroepiploic vein (body structure)|',
+                                    '314730000 |Structure of lymph node of stomach (body structure)|',
+                                    '116209005 |Proximal stomach structure (body structure)|',
+                                    '68560004 |Gastric corpus structure (body structure)|',
+                                    '361534007 |Structure of upper body of stomach (body structure)|',
+                                	'361535008 |Structure of mid body of stomach (body structure)|',
+                                    '361536009 |Structure of lower body of stomach (body structure)|',
+                                    '89382009 |Structure of greater curvature of stomach (body structure)|',
+                                    '80085006 |Structure of lesser curvature of stomach (body structure)|',
+                                    '38848004 |Duodenal structure (body structure)|',	
+                                    '280119005 |Pyloric structure of stomach (body structure)|']
+                var device=[
+                '701875006 |Endoscopic manual linear stapler (physical object)|',
+                '7701876007 |Intraluminal circular stapler (physical object)|',
+                '46364009 |Clamp, device (physical object)|'
+                ];
+               $('input.mapping1').click(function(){
+              
+                   if($('input:checkbox[id="incision_5hole"]').is(":checked") == true){
+                $('#incisionmap').val("85921004 |Puncture procedure (procedure)|:363702006 |Has focus (attribute)|=51316009 |Laparoscopic procedure (procedure)|");
+                
+                }
+                else if($('input:checkbox[id="incision_uppermidline"]').is(":checked") == true){
+                       $('#incisionmap').val("276917008 |Midline incision (procedure)|:405813007 |Procedure site - Direct (attribute)|=27947004 |Epigastric region structure (body structure)|");
+                }
+               });
+               $('input').click(function(){
+                   $(this).siblings('input:checkbox').attr("checked",false);
+               });
+               $('input.mapping2').click(function(){
+                    vlength=$('input:checkbox[name="ligation"]').length;//전체길이 표시
+                    var usdev=$('input:checkbox[name="ligationdevice"]').length;
+                    var i=1;
+                    var c=0;//device 체크용
+                    var d;//device 저장용
+                    var action="70751009 |Ligation (procedure)|:"
+                    //코드 담기
+                    while(c<=usdev){
+                        if($('input:checkbox[id="ligationdevice'+c+'"]').is(":checked")==true){
+                            d=device[document.getElementById('ligationdevice'+c).value];
+                            c++;
+                        }
+                        else{
+                            c++;
+                        }
+                    }
+                    while(i<=vlength){
+                        if(d!=null){
+                        if($('input:checkbox[id="ligation'+i+'"]').is(":checked") == true){
+                            action=action+"{405815000 |Procedure device (attribute)|="+d+", 363704007 |Procedure site (attribute)|="+body_structure[i]+"},";
+                            i++;
+                            }else{
+                                i++;
+                            }
+                         }else{
+                            if($('input:checkbox[id="ligation'+i+'"]').is(":checked") == true){
+                            action=action+"363704007 |Procedure site (attribute)|="+body_structure[i]+", ";
+                            i++;
+                            }else{
+                                i++;
+                            }
+                         }
+                    }
+                    $('#ligationmap').val(action);
+                
+                 
+                   
+                 
+                });
+                $('input.mapping3').click(function(){
+                    vlength=$('input:checkbox[name="divide"]').length;//전체길이 표시
+                    var usdev=$('input:checkbox[name="dividedevice"]').length;
+                    var i=1;
+                    var c=0;//device 체크용
+                    var d;
+                    var action="118630004 |Division (procedure)|:"
+                    //코드 담기
+                    while(c<usdev){
+                        if($('input:checkbox[id="dividedevice'+c+'"]').is(":checked")==true){
+                            d=device[document.getElementById('dividedevice'+c).value];
+                            c++;
+                        }
+                        else{
+                            c++;
+                        }
+                    }
+                    while(i<=vlength){
+                        if(d!=null){
+                        if($('input:checkbox[id="divide'+i+'"]').is(":checked") == true){
+                            action=action+"{405815000 |Procedure device (attribute)|="+d+", 363704007 |Procedure site (attribute)|="+body_structure[i]+"},";
+                            i++;
+                            }else{
+                                i++;
+                            }
+                         }else{
+                            if($('input:checkbox[id="divide'+i+'"]').is(":checked") == true){
+                            action=action+"363704007 |Procedure site (attribute)|="+body_structure[i]+", ";
+                            i++;
+                            }else{
+                                i++;
+                            }
+                         }
+                    }
+                    $('#dividemap').val(action);
+                });
+                $('input.mapping4').click(function(){
+                    vlength=$('input:checkbox[name="trimming"]').length;//전체길이 표시
+                    var usdev=$('input:checkbox[name="trimmingdevice"]').length;
+                    var i=1;
+                    var c=0;//device 체크용
+                    var d;
+                    var action="8378006 |Trimming (procedure)|:"
+                    //코드 담기
+                    while(c<usdev){
+                        if($('input:checkbox[id="trimmingdevice'+c+'"]').is(":checked")==true){
+                            d=device[document.getElementById('trimmingdevice'+c).value];
+                            c++;
+                        }
+                        else{
+                            c++;
+                        }
+                    }
+                    while(i<=vlength){
+                        if(d!=null){
+                        if($('input:checkbox[id="trimming'+i+'"]').is(":checked") == true){
+                            action=action+"{405815000 |Procedure device (attribute)|="+d+", 363704007 |Procedure site (attribute)|="+body_structure[i]+"},";
+                            i++;
+                            }else{
+                                i++;
+                            }
+                         }else{
+                            if($('input:checkbox[id="trimming'+i+'"]').is(":checked") == true){
+                            action=action+"363704007 |Procedure site (attribute)|="+body_structure[i]+", ";
+                            i++;
+                            }else{
+                                i++;
+                            }
+                         }
+                    }
+                    $('#trimmingmap').val(action);
+                });
+                $('input.mapping5').click(function(){
+                    vlength=$('input:checkbox[name="mobilization"]').length;//전체길이 표시
+                    var usdev=$('input:checkbox[name="mobilizationdevice"]').length;
+                    var i=1;
+                    var c=0;//device 체크용
+                    var d;
+                    var action="74923002 |Mobilization (procedure)|:";
+                    //코드 담기
+                    while(c<usdev){
+                        if($('input:checkbox[id="mobilizationdevice'+c+'"]').is(":checked")==true){
+                            d=device[document.getElementById('mobilizationdevice'+c).value];
+                            c++;
+                        }
+                        else{
+                            c++;
+                        }
+                    }
+                    while(i<=vlength){
+                        if(d!=null){
+                        if($('input:checkbox[id="mobilization'+i+'"]').is(":checked") == true){
+                            action=action+"{405815000 |Procedure device (attribute)|="+d+", 363704007 |Procedure site (attribute)|="+body_structure[i]+"},";
+                            i++;
+                            }else{
+                                i++;
+                            }
+                         }else{
+                            if($('input:checkbox[id="mobilization'+i+'"]').is(":checked") == true){
+                            action=action+"363704007 |Procedure site (attribute)|="+body_structure[i]+", ";
+                            i++;
+                            }else{
+                                i++;
+                            }
+                         }
+                    }
+                    $('#mobilizationmap').val(action);
+                });
+                $('input.mapping6').click(function(){
+                    vlength=$('input:checkbox[name="anastomosis"]').length;//전체길이 표시
+                    var usdev=$('input:checkbox[name="anastomosisdevice"]').length;
+                    // var mele=$('input:checkbox[name=""]').length;
+                    var i=1;
+                    var c=0;//device 체크용
+                    var d;
+                    var a=0;
+                    var me=$("input:radio[name='anastomosismethod']:checked").val();
+                    var result = null;
+                    var action="71388002 |Procedure (procedure)|:";
+                    var anastomosisact=['85217002 |Distal subtotal gastrectomy (procedure)|:{260686004 |Method (attribute)|=257744002 |End-to-end anastomosis - action (qualifier value)|,363704007 |Procedure site (attribute)|=69695003 |Stomach structure (body structure)|},{260686004 |Method (attribute)|=257744002 |End-to-end anastomosis - action (qualifier value)|,363704007 |Procedure site (attribute)|=38848004 |Duodenal structure (body structure)|}',
+                                        '128400002 |Anastomosis of stomach (procedure)|:{260686004 |Method (attribute)|=257741005 |Anastomosis - action (qualifier value),405813007 |Procedure site - Direct (attribute)|=38848004 |Duodenal structure (body structure)|,405815000 |Procedure device (attribute)|=701875006 |Endoscopic manual linear stapler (physical object)|}',
+                                        '49245001 |Bypass gastrojejunostomy (procedure)|',
+                                        '257744002 |End-to-end anastomosis - action (qualifier value)|',
+                                        '262143007 |Side-to-end anastomosis - action (qualifier value)|',
+                                        '257750007 |Side-to-side anastomosis (qualifier value)|',
+                                        '257746000 |End-to-side anastomosis - action (qualifier value)|',
+                                        '257747009 |Roux-en-Y - action (qualifier value)|',
+                                        '257741005 |Anastomosis - action (qualifier value)|'
+                    ]
+                    if(me<3){
+                        $('input#anastomosismap').val(anastomosisact[me]);//문합술 코드가 이미 정해진 경우
+
+                    }else{
+                         // 코드 담기
+                        while(c<usdev){
+                            if($('input:checkbox[id="anastomosisdevice'+c+'"]').is(":checked")==true){
+                                d=device[document.getElementById('anastomosisdevice'+c).value];
+                                c++;
+                            }
+                            else{
+                                c++;
+                            }
+                        }//도구 입력
+                        while(i<=vlength){
+                            if(d!=null){
+                                if($('input:checkbox[id="anastomosis'+i+'"]').is(":checked") == true){
+                                    action=action+"{405815000 |Procedure device (attribute)|="+d+", 363704007 |Procedure site (attribute)|="+body_structure[i]+", 260686004 |Method (attribute)|="+ anastomosisact[me]+"},";
+                                    i++;
+                                    }else{
+                                        i++;
+                                    }
+                            }else{
+                                if($('input:checkbox[id="mobilization'+i+'"]').is(":checked") == true){
+                                action=action+"{363704007 |Procedure site (attribute)|="+body_structure[i]+",  260686004 |Method (attribute)|="+ anastomosisact[me]+"},";
+                                i++;
+                                }else{
+                                    i++;
+                                }
+                            }
+                        }
+                        $('input#anastomosismap').val(action);
+                    
+                    }
+                
+                                    
+
+                   
+
+                    // while(i<=vlength){
+                    //     if(d!=null){
+                    //     if($('input:checkbox[id="mobilization'+i+'"]').is(":checked") == true){
+                    //         action=action+"{405815000 |Procedure device (attribute)|="+d+", 363704007 |Procedure site (attribute)|="+body_structure[i]+"},";
+                    //         i++;
+                    //         }else{
+                    //             i++;
+                    //         }
+                    //      }else{
+                    //         if($('input:checkbox[id="mobilization'+i+'"]').is(":checked") == true){
+                    //         action=action+"363704007 |Procedure site (attribute)|="+body_structure[i]+", ";
+                    //         i++;
+                    //         }else{
+                    //             i++;
+                    //         }
+                    //      }
+                    // }
+                    // $('#mobilizationmap').val(action);
+                   
+                });
+            </script>
+        
+
+        
+    </body>
+</html>
